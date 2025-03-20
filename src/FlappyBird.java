@@ -11,7 +11,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
 
     // Images
     Image backgroundImage;     Image mybackgroundImage;
-    Image birdImage;
+    Image birdImage; Image sukuna;
     Image topPipeImage;
     Image bottomPipeImage;
 
@@ -89,9 +89,10 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
         birdImage = new ImageIcon(getClass().getResource("./flappybird.png")).getImage();
         topPipeImage = new ImageIcon(getClass().getResource("./toppipe.png")).getImage();
         bottomPipeImage = new ImageIcon(getClass().getResource("./bottompipe.png")).getImage();
+        sukuna = new ImageIcon(getClass().getResource("./sukuna.jpeg")).getImage();
 
         // bird
-        bird = new Bird(birdImage);
+        bird = new Bird(sukuna);
         pipes = new ArrayList<Pipe>();
         
         
@@ -121,7 +122,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener {
     public void draw(Graphics g) {
         
         // Background
-        g.drawImage(backgroundImage, 0, 0, this.boardWidth, this.   boardHeight, null);
+        g.drawImage(mybackgroundImage, 0, 0, this.boardWidth, this.   boardHeight, null);
         
         // Bird
         g.drawImage(bird.img, bird.x, bird.y, bird.width, bird.height, null);
